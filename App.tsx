@@ -3,6 +3,8 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import RootNavigation from './app/Navigation/RootNavigation';
 import { useMemo } from 'react';
+import "react-native-gesture-handler"
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export default function App() {
   const theme: Theme = useMemo(
@@ -19,12 +21,12 @@ export default function App() {
     [],
   );
   return (
-    <View style={styles.container}>
+    <GestureHandlerRootView style={styles.container}>
      <NavigationContainer theme={theme}>
       <RootNavigation />
       <StatusBar style="dark" />
      </NavigationContainer>
-    </View>
+    </GestureHandlerRootView>
   );
 }
 
